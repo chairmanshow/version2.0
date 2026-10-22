@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "Course": {
+      "title": "Course",
+      "description": "Defines a course entity",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the course" },
+        "description": { "type": "string", "description": "Short description" },
+        "thumbnailUrl": { "type": "string", "description": "URL of the thumbnail image" },
+        "isPaid": { "type": "boolean", "description": "Whether the course is paid" },
+        "paymentLink": { "type": "string", "description": "URL for payment" },
+        "youtubeLiveLink": { "type": "string", "description": "YouTube Live link" },
+        "liveStartTime": { "type": "string", "format": "date-time", "description": "Start time of live session" },
+        "content": { "type": "string", "description": "Detailed course content" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" }
+      },
+      "required": ["title", "description", "createdAt"]
+    },
+    "Doctor": {
+      "title": "Doctor",
+      "description": "Defines a doctor entity",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the doctor" },
+        "specialization": { "type": "string", "description": "Specialization" },
+        "description": { "type": "string", "description": "Short description" },
+        "whatsappNumber": { "type": "string", "description": "WhatsApp number" },
+        "photoUrl": { "type": "string", "description": "URL of the doctor photo" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" }
+      },
+      "required": ["name", "specialization", "whatsappNumber", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/courses/{courseId}": {
+      "schema": "Course",
+      "description": "Courses collection"
+    },
+    "/doctors/{doctorId}": {
+      "schema": "Doctor",
+      "description": "Doctors collection"
+    }
+  }
+}
