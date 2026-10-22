@@ -1040,7 +1040,7 @@ export const MedicineScannerPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {result.primaryUses.map((use, i) => (
                     <div
-                      key={i}
+                      key={use.condition}
                       className="p-4 bg-slate-50 border border-slate-100 rounded-2xl space-y-1.5"
                     >
                       <div className="flex items-start justify-between gap-2">
@@ -1080,7 +1080,7 @@ export const MedicineScannerPage: React.FC = () => {
                     </h4>
                     <ul className="space-y-2 text-xs text-emerald-950">
                       {result.whoCanTakeThis.suitableFor.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
+                        <li key={`${i}-${item}`} className="flex items-start gap-2">
                           <span className="text-emerald-600 font-bold">•</span>
                           <span>{item}</span>
                         </li>
@@ -1096,7 +1096,7 @@ export const MedicineScannerPage: React.FC = () => {
                     </h4>
                     <ul className="space-y-2 text-xs text-rose-950">
                       {result.whoCanTakeThis.contraindications.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
+                        <li key={`${i}-${item}`} className="flex items-start gap-2">
                           <span className="text-rose-600 font-bold">•</span>
                           <span>{item}</span>
                         </li>
@@ -1142,7 +1142,7 @@ export const MedicineScannerPage: React.FC = () => {
                     </span>
                     <ul className="space-y-1.5 text-xs text-amber-950 font-medium leading-relaxed">
                       {result.criticalWarnings.map((w, i) => (
-                        <li key={i} className="flex items-start gap-2">
+                        <li key={`${i}-${w}`} className="flex items-start gap-2">
                           <span className="text-amber-700 font-bold">⚠️</span>
                           <span>{w}</span>
                         </li>
@@ -1158,7 +1158,7 @@ export const MedicineScannerPage: React.FC = () => {
                     <div className="flex flex-wrap gap-1.5">
                       {result.commonSideEffects.map((se, i) => (
                         <span
-                          key={i}
+                          key={`${i}-${se}`}
                           className="text-[11px] bg-white px-2.5 py-1 rounded-lg border border-slate-200 text-slate-700"
                         >
                           {se}
@@ -1172,7 +1172,7 @@ export const MedicineScannerPage: React.FC = () => {
                     <span className="text-xs font-bold text-slate-900 block">Known Drug &amp; Alcohol Interactions:</span>
                     <ul className="space-y-1 text-xs text-slate-600">
                       {result.drugInteractions.map((di, i) => (
-                        <li key={i}>• {di}</li>
+                        <li key={`${i}-${di}`}>• {di}</li>
                       ))}
                     </ul>
                   </div>
@@ -1206,7 +1206,7 @@ export const MedicineScannerPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                   {result.naturalAlternatives.map((alt, i) => (
                     <div
-                      key={i}
+                      key={`${i}-${alt.name}`}
                       className="bg-gradient-to-br from-emerald-50/90 to-amber-50/50 p-5 rounded-3xl border border-emerald-200 shadow-xs flex flex-col justify-between space-y-3"
                     >
                       <div className="space-y-2">

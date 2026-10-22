@@ -1550,7 +1550,7 @@ IF THE IMAGE IS UNCLEAR OR NOT MEDICINE:
 - Set isIdentified: false
 - Set confidenceLevel: "Low"
 - Set imageQualityCheck with isAcceptable: false, the exact issue, and polite user-facing messages in Hindi & English asking them to upload a clearer photo.
-- DO NOT GUESS OR INVENT MEDICINE NAMES OR SALTS.
+- DO NOT GUESS OR HALLUCINATE. If the text is illegible, partially obscured, or the medicine is unknown to you, strictly return isIdentified: false, confidenceLevel: "Low", and leave all clinical fields null.
 
 STEP 2: ACCURATE PACKAGING EXTRACTION (ONLY IF IMAGE IS ACCEPTABLE)
 When the medicine is visible and legible:
